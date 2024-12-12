@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Dijkstra's Algorithm Visualizer</h1>
+
+    <div class="controls">
+        <form id="graph-form" onsubmit="initializeGraph(event)">
+            <label for="num-nodes">Number of Nodes:</label>
+            <input type="number" id="num-nodes" required min="1">
+            <label for="num-edges">Number of Edges:</label>
+            <input type="number" id="num-edges" required min="0">
+            <button type="submit">Initialize Graph</button>
+        </form>
+
+        <form id="edge-form" onsubmit="addEdge(event)">
+            <label for="start-node">Start Node:</label>
+            <input type="number" id="edge-start" required>
+            <label for="end-node">End Node:</label>
+            <input type="number" id="edge-end" required>
+            <label for="weight">Weight:</label>
+            <input type="number" id="edge-weight" required min="1">
+            <button type="submit">Add Edge</button>
+        </form>
+
+        <label for="dijkstra-start">Dijkstra Start Node:</label>
+        <input type="number" id="dijkstra-start" required>
+        <button onclick="runDijkstra()">Run Dijkstra</button>
+    </div>
+
+    <h2>Distance Matrix:</h2>
+    <div id="distance-matrix"></div>
+
+    <h2>Graph Visualization:</h2>
+    <div id="graph-visualization"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
